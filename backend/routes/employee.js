@@ -71,7 +71,9 @@ router.put('/updateByid/:id' , verifyToken , async(req , res) => {
     }
 });
 
-// delete by id
+
+
+// delete by id with bearer token
 
 router.delete('/deleteById/:id' , verifyToken , async(req , res) => {
 
