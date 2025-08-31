@@ -1,0 +1,14 @@
+/* src/components/Header.css */
+.ems-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 22px; background: #0f172a; color: #fff; position: sticky; top: 0; z-index: 10;
+}
+.ems-header__left { display: flex; align-items: center; gap: 12px; cursor: pointer; }
+.ems-logo { background:#22c55e; color:#0f172a; font-weight:800; padding:6px 10px; border-radius:10px; }
+.ems-nav { display: flex; gap: 10px; }
+.link-btn { border:1px solid #64748b; color:#e2e8f0; padding:8px 12px; border-radius:10px; text-decoration:none; }
+.link-btn:hover { background:#1e293b; }
+.link-btn.primary { border-color:#22c55e; color:#22c55e; }
+.link-btn.primary:hover { background:#052e1f; }
+.link-btn.danger { border-color:#ef4444; color:#ef4444; background:transparent; cursor:pointer; }
+.link-btn.danger:hover { background:#2a1313; }

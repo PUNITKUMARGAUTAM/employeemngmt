@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.jsx
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Dashboard from "./pages/Dashboard";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import EmployeeEdit from "./pages/EmployeeEdit";
+import PrivateRoute from "./components/PrivateRoute";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React with node
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        {/* Landing page */}
+        <Route path="/" element={<Dashboard />} />
+
+        {/* Auth */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+
+        {/* Employee Update (protected) */}
+        <Route
+          path="/employees/:id"
+          element={
+            <PrivateRoute>
+              <EmployeeEdit />
+            </PrivateRoute>
+          }
+        />
+      </Routes>
+    </Router>
   );
 }
-
-export default App;
